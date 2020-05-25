@@ -1,0 +1,19 @@
+bindport: ":10724"
+logs:
+    log_level: info
+    addr:
+manager_worker: 3
+kafka:
+  brokers:
+elasticsearch:
+  sniff: true
+  address:
+elasticsearchv7:
+  sniff: true
+  address:
+mysql:
+  debug:
+  address:
+  username:
+  password:
+  dbname:

@@ -1,0 +1,54 @@
+source:
+  - source_type: kafka
+    tag: betlog
+    collect_worker: 10
+    setting:
+      topic:
+      - cm_betlog
+  - source_type: kafka
+    tag: recovery_betlog
+    collect_worker: 10
+    setting:
+      topic:
+      - cm_recovery_betlog
+  - source_type: kafka
+    tag: transaction
+    collect_worker: 10
+    setting:
+      topic:
+      - cm_transaction
+  - source_type: kafka
+    tag: recovery_transaction
+    collect_worker: 10
+    setting:
+      topic:
+      - cm_recovery_transaction
+  - source_type: tahmkench
+    tag: brand
+    collect_worker: 10
+  - source_type: tahmkench
+    tag: recovery_brand
+    collect_worker: 10
+match:
+  - match_type: es
+    tag: betlog
+  - match_type: es
+    tag: recovery_betlog
+  - match_type: es
+    tag: transaction
+  - match_type: es
+    tag: recovery_transaction
+  - match_type: es7
+    tag: betlog
+  - match_type: es7
+    tag: recovery_betlog
+  - match_type: es7
+    tag: transaction
+  - match_type: es7
+    tag: recovery_transaction
+  - match_type: kafka
+    tag: brand
+    send_worker: 10
+  - match_type: kafka
+    tag: recovery_brand
+    send_worker: 10
